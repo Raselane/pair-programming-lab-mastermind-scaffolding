@@ -32,6 +32,16 @@ function checkGuess(guess, solution) {
   // characters not in the right place"
   // for example, "2-1"
   //
+  var count = 0;
+  const obj = solution.split("");
+  for (str of str1) {
+    let idx = obj.findIndex(s => s === str);
+    if (idx >= 0) {
+      count++;
+      obj.splice(idx, 1);
+    }
+  }
+  return count;
 }
 
 // https://jsdoc.app

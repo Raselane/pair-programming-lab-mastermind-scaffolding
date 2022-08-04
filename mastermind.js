@@ -31,17 +31,31 @@ function checkGuess(guess, solution) {
   // "count of correct characters in the right place"-"count of correct
   // characters not in the right place"
   // for example, "2-1"
-  //
-  var count = 0;
-  const obj = solution.split("");
-  for (str of str1) {
-    let idx = obj.findIndex(s => s === str);
-    if (idx >= 0) {
-      count++;
-      obj.splice(idx, 1);
-    }
+  
+  //declaring variables
+  let guess = [];
+  let length = 5;
+
+  guess[0] = Math.floor(Math.random() * 10);
+
+  for(input=1; input<length; )
+  {
+      let value = Math.floor(Math.random() * 10);
+      let solution= true;
+    for(j=0; j<input; j++)
+    {
+      if(guess[j] == value)
+      {
+        solution = false;
+        break;
+      }
   }
-  return count;
+  if(solution == false){
+  }else{
+    guess[input]=value;
+    input++;
+  }
+}
 }
 
 // https://jsdoc.app
